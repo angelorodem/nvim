@@ -4,7 +4,7 @@ require("nvchad.configs.lspconfig").defaults()
 local lspconfig = require "lspconfig"
 
 -- EXAMPLE
-local servers = { "html", "cssls" }
+local servers = { "html", "cssls", "rust_analyzer" }
 local nvlsp = require "nvchad.configs.lspconfig"
 
 -- lsps with default config
@@ -22,3 +22,18 @@ end
 --   on_init = nvlsp.on_init,
 --   capabilities = nvlsp.capabilities,
 -- }
+
+lspconfig.rust_analyzer.setup {
+  settings = {
+    ['rust_analyzer'] = {
+      diagnostics = {
+        enable = false
+      }
+    }
+  },
+  capabilities = {
+    experimental = {
+      serverStatusNotification = true
+    }
+  }
+}
