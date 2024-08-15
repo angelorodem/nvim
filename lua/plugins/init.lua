@@ -48,4 +48,26 @@ return {
       additional_vim_regex_highlighting = false,
     }
   },
+  {
+    "smoka7/hop.nvim",
+    opts = {
+      multi_windows = true,
+      keys = "htnsueoaidgcrlypmbkjvx:",
+      uppercase_labels = true,
+    },
+    keys = {
+      {
+        "<leader>fj",
+        function()
+          require("hop").hint_words()
+        end,
+        mode = {"n","x","o"},
+      }
+    },
+  },
+  -- rust
+  "simrat39/rust-tools.nvim",
+  "mfussenegger/nvim-dap",
+  { "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} }
+
 }
