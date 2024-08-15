@@ -6,12 +6,6 @@ return {
   },
 
   -- These are some examples, uncomment them if you want to see them work!
-  {
-    "neovim/nvim-lspconfig",
-    config = function()
-      require "configs.lspconfig"
-    end,
-  },
 
 {
    "williamboman/mason.nvim",
@@ -29,7 +23,21 @@ return {
     },
    },
   },
-
+  {
+    "williamboman/mason-lspconfig.nvim",
+    opts = {
+      ensure_installed = {
+        "lua_ls", "rust_analyzer", "ast_grep", "dockerls", "gopls", "harper_ls",
+        "biome", "bufls"
+      }
+    }
+  },
+  {
+    "neovim/nvim-lspconfig",
+    config = function()
+      require "configs.lspconfig"
+    end,
+  },
   {
   	"nvim-treesitter/nvim-treesitter",
   	opts = {
