@@ -6,6 +6,7 @@ local map = vim.keymap.set
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
+map({ "n", "i", "v" }, "<F8>", ":TagbarToggle<CR>")
 
 map("n", "<A-j>", ":m .+1<CR>==") -- move line up(n)
 map("n", "<A-k>", ":m .-2<CR>==") -- move line down(n)
