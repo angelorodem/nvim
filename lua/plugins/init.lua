@@ -1,36 +1,43 @@
 return {
   {
     "stevearc/conform.nvim",
-    event = 'BufWritePre', -- uncomment for format on save
+    event = "BufWritePre", -- uncomment for format on save
     opts = require "configs.conform",
   },
 
   -- These are some examples, uncomment them if you want to see them work!
-  {"github/copilot.vim"},
-{
-   "williamboman/mason.nvim",
-   opts = {
-    ensure_installed = {
-      "lua-language-server",
-      "stylua",
-      "html-lsp",
-      "css-lsp",
-      "prettier",
-      "rust_analyzer",
-      "harper_ls",
-      "biome",
-      "gopls"
+  { "github/copilot.vim", lazy = false },
+  {
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "lua-language-server",
+        "stylua",
+        "html-lsp",
+        "css-lsp",
+        "prettier",
+        "rust_analyzer",
+        "harper_ls",
+        "biome",
+        "gopls",
+      },
     },
-   },
   },
+  -- needs cargo install ast-grep or npm install -g ast-grep
   {
     "williamboman/mason-lspconfig.nvim",
     opts = {
       ensure_installed = {
-        "lua_ls", "rust_analyzer", "ast_grep", "dockerls", "gopls", "harper_ls",
-        "biome", "bufls"
-      }
-    }
+        "lua_ls",
+        "rust_analyzer",
+        "ast_grep",
+        "dockerls",
+        "gopls",
+        "harper_ls",
+        "biome",
+        "bufls",
+      },
+    },
   },
   {
     "neovim/nvim-lspconfig",
@@ -39,22 +46,38 @@ return {
     end,
   },
   {
-  	"nvim-treesitter/nvim-treesitter",
-  	opts = {
-  		ensure_installed = {
-  			"vim", "lua", "vimdoc",
-       "html", "css", "typescript",
-        "rust", "go", "c_sharp",
-        "dart", "dockerfile", "gitignore",
-        "gitcommit", "javascript", "json",
-        "powershell", "bash", "make", "python",
-        "proto", "toml", "tsx", "yaml"
-  		},
-  	},
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "vim",
+        "lua",
+        "vimdoc",
+        "html",
+        "css",
+        "typescript",
+        "rust",
+        "go",
+        "c_sharp",
+        "dart",
+        "dockerfile",
+        "gitignore",
+        "gitcommit",
+        "javascript",
+        "json",
+        "powershell",
+        "bash",
+        "make",
+        "python",
+        "proto",
+        "toml",
+        "tsx",
+        "yaml",
+      },
+    },
     highlight = {
       enable = true,
       additional_vim_regex_highlighting = false,
-    }
+    },
   },
   {
     "smoka7/hop.nvim",
@@ -69,13 +92,12 @@ return {
         function()
           require("hop").hint_words()
         end,
-        mode = {"n","x","o"},
-      }
+        mode = { "n", "x", "o" },
+      },
     },
   },
-  -- rust
+  -- Rust
   "simrat39/rust-tools.nvim",
   "mfussenegger/nvim-dap",
-  { "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} }
-
+  { "rcarriga/nvim-dap-ui", dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } },
 }
