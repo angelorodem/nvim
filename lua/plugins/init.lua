@@ -98,16 +98,16 @@ return {
   },
   -- Dart/Flutter
   {
-    'akinsho/flutter-tools.nvim',
+    "akinsho/flutter-tools.nvim",
     lazy = false,
     dependencies = {
-        'nvim-lua/plenary.nvim',
-        'stevearc/dressing.nvim', -- optional for vim.ui.select
+      "nvim-lua/plenary.nvim",
+      "stevearc/dressing.nvim", -- optional for vim.ui.select
     },
     config = true,
-},
-  {"nvim-lua/plenary.nvim"},
-  {"stevearc/dressing.nvim"},
+  },
+  { "nvim-lua/plenary.nvim" },
+  { "stevearc/dressing.nvim" },
   { "ludovicchabant/vim-gutentags", ft = "rust" },
   { "preservim/tagbar", ft = "rust" },
   -- Rust

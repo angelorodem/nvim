@@ -7,7 +7,7 @@ local options = {
     javascript = { "prettierd", "prettier", stop_after_first = true },
     typescript = { "prettierd", "prettier", stop_after_first = true },
     go = { "goimports", "gofmt" },
-    ["*"] = { "codespell" },
+    --    ["*"] = { "codespell" },
   },
   default_format_opts = {
     lsp_format = "fallback",
