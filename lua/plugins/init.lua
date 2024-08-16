@@ -96,6 +96,8 @@ return {
       },
     },
   },
+  { "ludovicchabant/vim-gutentags", ft = "rust" },
+  { "preservim/tagbar", ft = "rust" },
   -- Rust
   {
     "simrat39/rust-tools.nvim",
