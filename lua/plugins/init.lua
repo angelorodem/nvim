@@ -73,6 +73,21 @@ return {
       }
     },
   },
+
+  -- Dart/Flutter
+  {
+    'akinsho/flutter-tools.nvim',
+    lazy = false,
+    dependencies = {
+        'nvim-lua/plenary.nvim',
+        'stevearc/dressing.nvim', -- optional for vim.ui.select
+    },
+    config = true,
+},
+  {"nvim-lua/plenary.nvim"},
+  {"stevearc/dressing.nvim"},
+
+
   -- rust
   "simrat39/rust-tools.nvim",
   "mfussenegger/nvim-dap",
