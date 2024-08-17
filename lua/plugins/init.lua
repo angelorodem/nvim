@@ -112,8 +112,8 @@ return {
     config = true,
   },
   -- Rust
-  { "ludovicchabant/vim-gutentags", ft = "rust" },
-  { "preservim/tagbar", ft = "rust" },
+  -- { "ludovicchabant/vim-gutentags", ft = "rust" },
+  -- { "preservim/tagbar", ft = "rust" },
   {
     "simrat39/rust-tools.nvim",
     ft = "rust",
