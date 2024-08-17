@@ -1,6 +1,7 @@
 return {
   {
     "stevearc/conform.nvim",
+    lazy = false,
     event = "BufWritePre", -- uncomment for format on save
     opts = require "configs.conform",
   },
@@ -26,6 +27,7 @@ return {
   -- needs cargo install ast-grep or npm install -g ast-grep
   {
     "williamboman/mason-lspconfig.nvim",
+    lazy = false,
     opts = {
       ensure_installed = {
         "lua_ls",
@@ -41,12 +43,14 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
+    lazy = false,
     config = function()
       require "configs.lspconfig"
     end,
   },
   {
     "nvim-treesitter/nvim-treesitter",
+    lazy = false,
     opts = {
       ensure_installed = {
         "vim",
@@ -97,30 +101,22 @@ return {
     },
   },
   -- Dart/Flutter
+  { "nvim-lua/plenary.nvim" },
+  { "stevearc/dressing.nvim" },
   {
     "akinsho/flutter-tools.nvim",
-    lazy = false,
     dependencies = {
       "nvim-lua/plenary.nvim",
       "stevearc/dressing.nvim", -- optional for vim.ui.select
     },
     config = true,
   },
-  { "nvim-lua/plenary.nvim" },
-  { "stevearc/dressing.nvim" },
+  -- Rust
   { "ludovicchabant/vim-gutentags", ft = "rust" },
   { "preservim/tagbar", ft = "rust" },
-  -- Rust
   {
     "simrat39/rust-tools.nvim",
     ft = "rust",
-    dependencies = "neovim/nvim-lspconfig",
-    opts = function()
-      return require "configs.rust-tools"
-    end,
-    config = function(_, opts)
-      require("rust-tools").setup(opts)
-    end,
   },
   "mfussenegger/nvim-dap",
   { "nvim-neotest/nvim-nio" },
