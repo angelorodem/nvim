@@ -1,9 +1,43 @@
-**This repo is supposed to used as config by NvChad users!**
+# Install
+- Install neovim
+https://github.com/neovim/neovim/blob/master/INSTALL.md
 
-- The main nvchad repo (NvChad/NvChad) is used as a plugin by this repo.
-- So you just import its modules , like `require "nvchad.options" , require "nvchad.mappings"`
-- So you can delete the .git from this repo ( when you clone it locally ) or fork it :)
+- First install lua language server
+windows: scoop install lua-language-server
+linux: brew install lua-language-server
 
-# Credits
+- Install go
+donwnload from https://go.dev/dl/
+Windows: run msi
+linux:
+```bash
+ rm -rf /usr/local/go && tar -C /usr/local -xzf go1.23.0.linux-amd64.tar.gz
+ echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.zshrc
+ source ~/.zshrc
+ ```
 
-1) Lazyvim starter https://github.com/LazyVim/starter as nvchad's starter was inspired by Lazyvim's . It made a lot of things easier!
+- Install gopls
+```bash
+go install golang.org/x/tools/gopls@latest
+```
+
+- Install rust
+download rustup and install
+
+- Install rust-analyzer
+```bash
+rustup +nightly component add rust-analyzer-preview
+```
+
+- Install ctags
+
+windows: https://github.com/universal-ctags/ctags-win32/releases
+linux: https://github.com/universal-ctags/ctags-nightly-build/releases
+
+add ctags to path
+
+# Setup
+run 
+:Copilot setup
+:MasonInstallAll
+:Lazy! sync
