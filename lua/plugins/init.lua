@@ -38,6 +38,7 @@ return {
         "harper_ls",
         "biome",
         "bufls",
+        "tsserver",
       },
     },
   },
