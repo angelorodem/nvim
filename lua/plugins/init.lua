@@ -7,7 +7,22 @@ return {
   },
 
   -- These are some examples, uncomment them if you want to see them work!
-  { "github/copilot.vim", lazy = false },
+  -- { "github/copilot.vim", lazy = false },
+  {
+    "zbirenbaum/copilot.lua",
+    lazy = false,
+    opts = {
+      suggestion = { enabled = false },
+      panel = { enabled = false },
+    },
+  },
+  {
+    "zbirenbaum/copilot-cmp",
+    lazy = false,
+    opts = function()
+      require("copilot_cmp").setup()
+    end,
+  },
   {
     "williamboman/mason.nvim",
     opts = {
@@ -136,6 +151,17 @@ return {
   },
   {
     "hrsh7th/nvim-cmp",
+    opts = {
+      sources = {
+        -- Copilot Source
+        { name = "copilot", group_index = 2 },
+        -- Other Sources
+        { name = "nvim_lsp", group_index = 2 },
+        { name = "path", group_index = 2 },
+        { name = "luasnip", group_index = 2 },
+        { name = "crates" },
+      },
+    },
     -- opts = function()
     --   local M = require "plugins.configs.cmp"
     --   table.insert(M.sources, { name = "crates" })
