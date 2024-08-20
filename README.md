@@ -1,4 +1,22 @@
 # Install
+## Requirements
+- Neovim 0.10  (install readme below)
+- Universal Ctags (install readme below)
+- [NerdFonts](https://www.nerdfonts.com/)
+- [Ripgrep](https://github.com/BurntSushi/ripgrep)
+- GCC
+- Make
+
+- Clone this repo
+Linux:
+```bash
+git clone https://github.com/angelorodem/nvim ~/.config/nvim && nvim
+```
+Windows:
+```powershell
+git clone https://github.com/angelorodem/nvim %USERPROFILE%\AppData\Local\nvim && nvim
+```
+
 - Install neovim
 https://github.com/neovim/neovim/blob/master/INSTALL.md
 
