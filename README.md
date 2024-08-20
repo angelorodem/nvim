@@ -16,7 +16,7 @@ git clone https://github.com/angelorodem/nvim ~/.config/nvim && nvim
 ```
 Windows:
 ```powershell
-git clone https://github.com/angelorodem/nvim &$ENV:USERPROFILE\AppData\Local\nvim & nvim
+git clone https://github.com/angelorodem/nvim $ENV:USERPROFILE\AppData\Local\nvim & nvim
 ```
 
 - Install neovim
