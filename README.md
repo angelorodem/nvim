@@ -8,6 +8,10 @@
 - GCC (scoop install mingw)
 - Make
 - [LuaLS](https://luals.github.io/#neovim-install)
+- for TS 
+    - Biome : npm install -g @biomejs/biome
+    - tssever: npm install -g typescript typescript-language-server
+    - eslint: npm i -g vscode-langservers-extracted
 
 - Clone this repo
 Linux:
