@@ -2,6 +2,7 @@
 ## Requirements
 - Neovim 0.10  (install readme below)
 - Universal Ctags (install readme below)
+- [Scoop (Windows)](https://scoop.sh/) 
 - [NerdFonts](https://www.nerdfonts.com/)
 - [Ripgrep](https://github.com/BurntSushi/ripgrep)
 - GCC
