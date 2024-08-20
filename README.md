@@ -3,10 +3,11 @@
 - Neovim 0.10  (install readme below)
 - Universal Ctags (install readme below)
 - [Scoop (Windows)](https://scoop.sh/) 
-- [NerdFonts](https://www.nerdfonts.com/)
+- [NerdFonts](https://www.nerdfonts.com/) [RobotoMono](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/RobotoMono.zip)
 - [Ripgrep](https://github.com/BurntSushi/ripgrep)
-- GCC
+- GCC (scoop install mingw)
 - Make
+- [LuaLS](https://luals.github.io/#neovim-install)
 
 - Clone this repo
 Linux:
@@ -15,7 +16,7 @@ git clone https://github.com/angelorodem/nvim ~/.config/nvim && nvim
 ```
 Windows:
 ```powershell
-git clone https://github.com/angelorodem/nvim %USERPROFILE%\AppData\Local\nvim && nvim
+git clone https://github.com/angelorodem/nvim &$ENV:USERPROFILE\AppData\Local\nvim & nvim
 ```
 
 - Install neovim
