@@ -5,7 +5,7 @@ return {
     event = "BufWritePre", -- uncomment for format on save
     opts = require "configs.conform",
   },
-
+  { "neoclide/coc.nvim", lazy = false },
   -- These are some examples, uncomment them if you want to see them work!
   -- { "github/copilot.vim", lazy = false },
   {
