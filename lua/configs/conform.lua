@@ -4,7 +4,7 @@ local options = {
     lua = { "stylua" },
     css = { "prettier" },
     html = { "prettier" },
-    rust = { "rustfmt", lsp_format = "fallback" },
+    -- rust = { "rustfmt", lsp_format = "fallback" },
     javascript = { "prettierd", "prettier", stop_after_first = true },
     typescript = { "prettierd", "prettier", stop_after_first = true },
     javascriptreact = { "prettierd", "prettier", stop_after_first = true },

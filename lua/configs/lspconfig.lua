@@ -7,7 +7,6 @@ local lspconfig = require "lspconfig"
 local servers = {
   "html",
   "cssls",
-  "ast_grep",
   "dockerls",
   "gopls",
   "biome",
@@ -25,24 +24,20 @@ for _, lsp in ipairs(servers) do
   }
 end
 
-lspconfig.rust_analyzer.setup {
-  on_attach = nvlsp.on_attach,
-  on_init = nvlsp.on_init,
-  capabilities = nvlsp.capabilities,
-  filetypes = { "rust" },
-  root_dir = lspconfig.util.root_pattern "Cargo.toml",
-  settings = {
-    ["rust_analyzer"] = {
-      diagnostics = {
-        enable = false,
-      },
-      cargo = {
-        allFeatures = true,
-      },
-      checkOnSave = {
-        allFeatures = true,
-        command = "clippy",
-      },
-    },
-  },
-}
+-- lspconfig.rust_analyzer.setup {
+--   on_attach = nvlsp.on_attach,
+--   on_init = nvlsp.on_init,
+--   capabilities = nvlsp.capabilities,
+--   filetypes = { "rust" },
+--   root_dir = lspconfig.util.root_pattern "Cargo.toml",
+--   settings = {
+--     ["rust_analyzer"] = {
+--       diagnostics = {
+--         enable = true,
+--       },
+--       check = {
+--         command = "clippy",
+--       },
+--     },
+--   },
+-- }

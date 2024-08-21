@@ -5,7 +5,7 @@ return {
     event = "BufWritePre", -- uncomment for format on save
     opts = require "configs.conform",
   },
-  { "neoclide/coc.nvim", lazy = false },
+  -- { "neoclide/coc.nvim", lazy = false },
   -- These are some examples, uncomment them if you want to see them work!
   -- { "github/copilot.vim", lazy = false },
   {
@@ -48,7 +48,7 @@ return {
     opts = {
       ensure_installed = {
         "lua_ls",
-        "rust_analyzer",
+        -- "rust_analyzer",
         "ast_grep",
         "dockerls",
         "gopls",
@@ -143,6 +143,13 @@ return {
   {
     "simrat39/rust-tools.nvim",
     ft = "rust",
+    dependencies = "neovim/nvim-lspconfig",
+    opts = function()
+      require "configs.rust-tools"
+    end,
+    config = function(_, opts)
+      require("rust-tools").setup(opts)
+    end,
   },
   "mfussenegger/nvim-dap",
   { "nvim-neotest/nvim-nio" },
