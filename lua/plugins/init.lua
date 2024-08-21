@@ -96,10 +96,17 @@ return {
         "tsx",
         "yaml",
       },
+      auto_install = true,
+      highlight = { enable = true },
     },
     highlight = {
       enable = true,
       additional_vim_regex_highlighting = false,
+    },
+    rainbow = {
+      enable = true,
+      extended_mode = true,
+      max_file_lines = 1000,
     },
   },
   {
@@ -162,12 +169,12 @@ return {
         { name = "crates" },
       },
     },
-    -- opts = function()
-    --   local M = require "plugins.configs.cmp"
-    --   table.insert(M.sources, { name = "crates" })
-    --   return M
-    -- end,
   },
+  { "hrsh7th/cmp-nvim-lsp" },
+  { "hrsh7th/cmp-vsnip" },
+  { "hrsh7th/cmp-path" },
+  { "hrsh7th/cmp-buffer" },
+  { "hrsh7th/vim-vsnip" },
   {
     "rust-lang/rust.vim",
     ft = "rust",

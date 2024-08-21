@@ -65,3 +65,4 @@ run
 :Copilot setup
 :MasonInstallAll
 :Lazy! sync
+:TSUpdate
