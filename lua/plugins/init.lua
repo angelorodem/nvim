@@ -1,3 +1,4 @@
+-- Load lspconfig here for rustaceanvim config
 local nvlsp = require "nvchad.configs.lspconfig"
 return {
   {
@@ -6,9 +7,6 @@ return {
     event = "BufWritePre", -- uncomment for format on save
     opts = require "configs.conform",
   },
-  -- { "neoclide/coc.nvim", lazy = false },
-  -- These are some examples, uncomment them if you want to see them work!
-  -- { "github/copilot.vim", lazy = false },
   {
     "zbirenbaum/copilot.lua",
     lazy = false,
@@ -34,7 +32,7 @@ return {
         "css-lsp",
         "prettier",
         "rust_analyzer",
-        "harper_ls",
+        "codelldb",
         "biome",
         "gopls",
         "tsserver",
@@ -49,11 +47,9 @@ return {
     opts = {
       ensure_installed = {
         "lua_ls",
-        -- "rust_analyzer",
-        "ast_grep",
+        -- "rust_analyzer", -- Disabled because of rustaceanvim
         "dockerls",
         "gopls",
-        "harper_ls",
         "biome",
         "bufls",
         "tsserver",
@@ -127,11 +123,12 @@ return {
       },
     },
   },
-  -- Dart/Flutter
   { "nvim-lua/plenary.nvim" },
   { "stevearc/dressing.nvim" },
+  -- Dart/Flutter
   {
     "akinsho/flutter-tools.nvim",
+    -- lazy = true,
     dependencies = {
       "nvim-lua/plenary.nvim",
       "stevearc/dressing.nvim", -- optional for vim.ui.select
@@ -149,6 +146,29 @@ return {
       vim.g.rustaceanvim = {
         server = {
           on_attach = nvlsp.on_attach,
+          default_settings = {
+            ["rust-analyzer"] = {
+              checkOnSave = {
+                command = "clippy",
+                allFeatures = true,
+              },
+              filetypes = { "rust" },
+              diagnostics = {
+                enable = true,
+                enableExperimental = true,
+              },
+              cargo = {
+                allFeatures = true,
+              },
+              inlayHints = {
+                chainingHints = true,
+                typeHints = true,
+                smallerHints = true,
+                parameterHints = true,
+                maxLength = 32,
+              },
+            },
+          },
         },
       }
     end,
@@ -156,39 +176,17 @@ return {
   "mfussenegger/nvim-dap",
   { "nvim-neotest/nvim-nio" },
   { "rcarriga/nvim-dap-ui", dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } },
-  -- {
-  --   "saecki/crates.nvim",
-  --   ft = { "rust", "toml" },
-  --   config = function(_, opts)
-  --     local crates = require "crates"
-  --     crates.setup(opts)
-  --     crates.show()
-  --   end,
-  -- },
-  {
-    "hrsh7th/nvim-cmp",
-    opts = {
-      sources = {
-        -- Copilot Source
-        { name = "copilot", group_index = 2 },
-        -- Other Sources
-        { name = "nvim_lsp", group_index = 2 },
-        { name = "path", group_index = 2 },
-        { name = "luasnip", group_index = 2 },
-        { name = "crates" },
-      },
-    },
-  },
   { "hrsh7th/cmp-nvim-lsp" },
   { "hrsh7th/cmp-vsnip" },
   { "hrsh7th/cmp-path" },
   { "hrsh7th/cmp-buffer" },
   { "hrsh7th/vim-vsnip" },
-  -- {
-  --   "rust-lang/rust.vim",
-  --   ft = "rust",
-  --   config = function()
-  --     vim.g.rustfmt_autosave = 1
-  --   end,
-  -- },
+  {
+    "hrsh7th/nvim-cmp",
+    config = function(_, opts)
+      table.insert(opts.sources, { name = "copilot", group_index = 0 })
+      table.insert(opts.sources, { name = "crates" })
+      require("cmp").setup(opts)
+    end,
+  },
 }
