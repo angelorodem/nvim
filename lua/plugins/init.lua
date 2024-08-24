@@ -176,16 +176,15 @@ return {
   "mfussenegger/nvim-dap",
   { "nvim-neotest/nvim-nio" },
   { "rcarriga/nvim-dap-ui", dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } },
-  { "hrsh7th/cmp-nvim-lsp" },
-  { "hrsh7th/cmp-vsnip" },
-  { "hrsh7th/cmp-path" },
-  { "hrsh7th/cmp-buffer" },
-  { "hrsh7th/vim-vsnip" },
+  { "hrsh7th/cmp-nvim-lsp-signature-help" },
+  { "hrsh7th/cmp-nvim-lsp-document-symbol" },
   {
     "hrsh7th/nvim-cmp",
     config = function(_, opts)
       table.insert(opts.sources, { name = "copilot", group_index = 0 })
       table.insert(opts.sources, { name = "crates" })
+      table.insert(opts.sources, { name = "nvim_lsp_signature_help" })
+      table.insert(opts.sources, { name = "nvim_lsp_document_symbol" })
       require("cmp").setup(opts)
     end,
   },
