@@ -28,7 +28,7 @@ map("n", "<Leader>dc>", "<cmd>lua require'dap'.continue()<CR>", { desc = "Debugg
 map("n", "<Leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", { desc = "Debugger toggle breakpoint" })
 map(
   "n",
-  "<Leader>dd",
+  "<Leader>dp",
   "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>",
   { desc = "Debugger set conditional breakpoint" }
 )
