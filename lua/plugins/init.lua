@@ -65,6 +65,14 @@ return {
     end,
   },
   {
+    "MysticalDevil/inlay-hints.nvim",
+    event = "LspAttach",
+    dependencies = { "neovim/nvim-lspconfig" },
+    config = function()
+      require("inlay-hints").setup()
+    end,
+  },
+  {
     "nvim-treesitter/nvim-treesitter",
     lazy = false,
     opts = {
@@ -156,7 +164,7 @@ return {
         },
         server = {
           on_attach = nvlsp.on_attach,
-          default_settings = {
+          settings = {
             ["rust-analyzer"] = {
               checkOnSave = {
                 command = "clippy",
@@ -171,11 +179,36 @@ return {
                 allFeatures = true,
               },
               inlayHints = {
-                chainingHints = true,
-                typeHints = true,
-                smallerHints = true,
-                parameterHints = true,
-                maxLength = 32,
+                bindingModeHints = {
+                  enable = false,
+                },
+                chainingHints = {
+                  enable = true,
+                },
+                closingBraceHints = {
+                  enable = true,
+                  minLines = 25,
+                },
+                closureReturnTypeHints = {
+                  enable = "never",
+                },
+                lifetimeElisionHints = {
+                  enable = "never",
+                  useParameterNames = false,
+                },
+                maxLength = 25,
+                parameterHints = {
+                  enable = true,
+                },
+                reborrowHints = {
+                  enable = "never",
+                },
+                renderColons = true,
+                typeHints = {
+                  enable = true,
+                  hideClosureInitialization = false,
+                  hideNamedConstructor = false,
+                },
               },
             },
           },
